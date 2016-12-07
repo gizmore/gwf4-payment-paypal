@@ -66,9 +66,7 @@ final class PaymentPaypal_InitCheckout extends GWF_Method
 				return GWF_HTML::err('ERR_DATABASE', array( __FILE__, __LINE__));
 			}
 			$payPalURL = PAYPAL_URL.$token;
-			header("Location: ".$payPalURL);
-			echo 'The browser should redirect you to: '.$payPalURL.PHP_EOL;
-			die();
+			return GWF_Website::redirect($payPalURL);
 		}
 		else {
 			return Paypal_Util::paypalError($resArray);

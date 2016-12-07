@@ -7,8 +7,8 @@ final class Module_PaymentPaypal extends GWF_PaymentModule
 	##################
 	### GWF_Module ###
 	##################
-	public function getVersion() { return 1.00; }
-	public function getPrice() { return 19.95; }
+	public function getVersion() { return 4.00; }
+	public function getPrice() { return 0.00; }
 	public function getClasses() { return array('Paypal_Util'); }
 	public function onRequest() { $this->cfgDefineSettings(); return parent::onRequest(); }
 	public function onLoadLanguage() { return $this->loadLanguage('lang/paypal'); }
@@ -68,7 +68,7 @@ final class Module_PaymentPaypal extends GWF_PaymentModule
 	{
 		$tVars = array(
 			'form_action' => GWF_WEB_ROOT.'index.php?mo=PaymentPaypal&me=InitCheckout',
-			'img_path' => GWF_WEB_ROOT.'img/'.GWF_ICON_SET.'/buy_pp.png',
+			'img_path' => GWF_WEB_ROOT.'img/'.GWF_DEFAULT_DESIGN.'/buy_pp.png',
 			'form_hidden' => $this->getHiddenData($module, $order, $gdo, $user),
 		);
 		return $this->templatePHP('paybutton.php', $tVars);
