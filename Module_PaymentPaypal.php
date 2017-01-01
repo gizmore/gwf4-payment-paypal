@@ -90,5 +90,3 @@ final class Module_PaymentPaypal extends GWF_PaymentModule
 	}
 
 }
-
-?>
